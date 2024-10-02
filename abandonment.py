@@ -29,7 +29,7 @@ def app():
         tracked object and the last person who interacted with it. If the distance exceeds a threshold of two times a person's width, \
         the object is flagged as abandoned."
     )
-    st.image("assets/methods/3_abandonment.png", caption="Methodology Flowchart")
+    st.image("assets/methods/3_abandonment.png", width=700, caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/iZQs-JqEOZ8")

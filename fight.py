@@ -35,7 +35,7 @@ def app():
         of a fight. This methodology aims to improve real-time fight detection accuracy by combining advanced detection models with \
         specific post-classification criteria checks. "
     )
-    st.image("assets/methods/5_fight.png", caption="Methodology Flowchart")
+    st.image("assets/methods/5_fight.png", width=700, caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/M3kLdogW4As")

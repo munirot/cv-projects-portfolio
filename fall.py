@@ -33,7 +33,7 @@ def app():
         falling detection then uses criteria checking across multiple frames to ascertain whether a fall has occurred. \
         If the set criteria are met, a fall is detected; otherwise, the system proceeds to the next frame without indicating a fall."
     )
-    st.image("assets/methods/4_fall.png", caption="Methodology Flowchart")
+    st.image("assets/methods/4_fall.png", width=700, caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/61W3Hjj0vfI")

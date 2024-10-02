@@ -22,7 +22,7 @@ def app():
         Following this, the YOLOv5 model is employed to identify human figures. The system then verifies whether the detected \
         figure is situated within the predetermined property boundaries."
     )
-    st.image("assets/methods/2_invasion.png", caption="Methodology Flowchart")
+    st.image("assets/methods/2_invasion.png", width=700, caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/vdz6jGvpIj0")

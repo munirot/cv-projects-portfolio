@@ -30,7 +30,7 @@ def app():
         "plain objects such as helmets, non-helmets, and riders. The results from detection are then processed to check "
         "whether or not the riders are wearing helmets."
     )
-    st.image("assets/methods/1_helmet.png", caption="Methodology Flowchart")
+    st.image("assets/methods/1_helmet.png", width=350,caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://www.youtube.com/watch?v=963DPLj5mJc&ab_channel=SaravitSoeng")
