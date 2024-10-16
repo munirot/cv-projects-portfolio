@@ -1,18 +1,31 @@
 import streamlit as st
 
 def app():
+    st.markdown(""" <style> 
+                .font {
+                    font-family: "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI";
+                }
+                
+                .txtAlign {
+                    text-align: justify;
+                }
+        </style> """, unsafe_allow_html=True)
+    
     st.title("Fall Detection Using Pose Angle Analysis with Machine Learning Classifiers")
     st.header("Overview")
-    st.write(
-        "Fall detection is an important area of focus in healthcare and assisted living technologies, especially as the global \
+    overview = """
+        <p class="font txtAlign">
+        Fall detection is an important area of focus in healthcare and assisted living technologies, especially as the global \
         population ages, resulting in an increased incidence of falls among older adults. Traditional fall detection methods, \
         such as manual observation or wearable sensors, have limitations in terms of scalability and accuracy. To address these issues, \
         this study proposes a novel machine-learning framework for improving fall detection from CCTV camera footage. The framework \
         uses YOLOv8, a deep learning model, to detect and track people's movements and poses in real time. After preprocessing the data, \
         various machine learning classifiers were used to differentiate between standing and lying positions. By leveraging geometric \
         data analysis, the proposed system offers a comprehensive approach to fall detection, facilitating early intervention and \
-        improved patient outcomes."
-    )
+        improved patient outcomes.
+        </p>
+    """
+    st.write(overview, unsafe_allow_html=True)
 
     st.header("Technology Stack")
     st.write("YOLOv8, Machine Learning Classifier, PyTorch, OpenVino, Python, C++")
@@ -24,16 +37,20 @@ def app():
     st.markdown("[Labeling Guide](https://docs.google.com/presentation/d/1fBfKtVBGKDe9Kt3m24RtUgz8qmAbZNc92txGm5dG0ug/edit?usp=sharing)")
 
     st.header("Methodology")
-    st.write(
-        "The process starts with the video being segmented into frames, which are then analyzed by YOLOv8, an object detection \
+    method = """
+        <p class="font txtAlign">
+            The process starts with the video being segmented into frames, which are then analyzed by YOLOv8, an object detection \
         algorithm that detects, tracks, and estimates the pose of people within the frames. The system processes this information \
         to extract geometric data on each person's position and pose. Before determining a fall, this preprocessed data is inputted \
         into machine learning classifiers such as random forests, support vector machines, decision trees, gradient boosting, \
         and deep learning models, to initially determine whether the person is standing or lying. The critical step of \
         falling detection then uses criteria checking across multiple frames to ascertain whether a fall has occurred. \
-        If the set criteria are met, a fall is detected; otherwise, the system proceeds to the next frame without indicating a fall."
-    )
-    st.image("assets/methods/4_fall.png", width=700, caption="Methodology Flowchart")
+        If the set criteria are met, a fall is detected; otherwise, the system proceeds to the next frame without indicating a fall.
+        </p>
+    """
+    st.write(method, unsafe_allow_html=True)
+    
+    st.image("assets/methods/new_4_fall.png", caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/61W3Hjj0vfI")
