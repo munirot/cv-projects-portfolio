@@ -35,7 +35,7 @@ def app():
         regular rectangle or a polygon. Following this, the YOLOv5 model is employed to identify human figures. The system then verifies whether the detected \
         figure is situated within the predetermined property boundaries.</p>', unsafe_allow_html=True
     )
-    st.image("assets/methods/new_2_invasion.svg", caption="Methodology Flowchart")
+    st.image("assets/methods/new_2_invasion.png", caption="Methodology Flowchart")
 
     st.header("Demo")
     st.video("https://youtu.be/vdz6jGvpIj0")

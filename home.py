@@ -10,6 +10,7 @@ def app():
                     text-transform: uppercase;
                     font-family: "Poppins";
                     margin-bottom: 3rem;
+                    line-height: normal;
                 }
                     
                 .font {
@@ -21,7 +22,7 @@ def app():
                 }
         </style> """, unsafe_allow_html=True)
     
-    st.markdown('<p class="title font">Project Highlights</p>', unsafe_allow_html=True)
+    st.markdown("<p class='title font'>Project Highlights / <br> Lab's Name</p> <hr>", unsafe_allow_html=True)
     
     st.header("Introduction")
     st.write('<p class="font txtAlign"> We are a dedicated group of professor and research students specializing in computer vision, machine learning, \
