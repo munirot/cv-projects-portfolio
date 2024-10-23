@@ -4,12 +4,11 @@ def app():
     st.markdown(""" <style> 
                 .title {
                     font-size: 3rem;
-                    color: #507687;
+                    color: #364F6B;
                     text-align: center;
                     font-weight: bold;
                     text-transform: uppercase;
                     font-family: "Poppins";
-                    margin-bottom: 3rem;
                     line-height: normal;
                 }
                     
@@ -20,12 +19,59 @@ def app():
                 .txtAlign {
                     text-align: justify;
                 }
+                
+                .nav-container{
+                    display: inline-grid;
+                    grid-template-columns: repeat(auto-fit, 23.33%);
+                    min-width: 100%;
+                    grid-gap: 10px;
+                    list-style: none;
+                    position: relative;
+                    justify-content: center;
+                    background-color: #f1f2f6;
+                    margin: 1rem 0;
+                    padding: 8px 0px;
+                    border-radius: 10px;
+                }
+                
+                .nav-button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #f1f2f6;
+                    color: black !important;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                
+                .nav-button:hover {
+                    background-color: #364F6B;
+                    color: #FFF !important;
+                    text-decoration: none;
+                }
         </style> """, unsafe_allow_html=True)
     
-    st.markdown("<p class='title font'>Project Highlights / <br> Lab's Name</p> <hr>", unsafe_allow_html=True)
+    
+    st.markdown("<p class='title font'>AI Convergence Lab</p> <hr style="">", unsafe_allow_html=True)
+    
+    # Navigation bar styled as buttons
+    st.markdown(
+        """
+        <div class="nav-container">
+            <a href="#introduction" class="nav-button">Introduction</a>
+            <a href="#our-mission" class="nav-button">Mission</a>
+            <a href="#collaborations" class="nav-button">Collaboration</a>
+            <a href="#contact" class="nav-button">Contact</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    st.image("assets/ai-image.jpg")
     
     st.header("Introduction")
-    st.write('<p class="font txtAlign"> We are a dedicated group of professor and research students specializing in computer vision, machine learning, \
+    st.write('<p class="font txtAlign"> We are a dedicated group of research enthusiast specializing in computer vision, machine learning, \
         and artificial intelligence. Our team is committed to solving complex real-world challenges by applying advanced technology \
         and developing innovative solutions across a wide range of industries. With a strong foundation in deep learning, image \
         processing, and sensor integration, we strive to leverage our expertise to create impactful applications that can transform \
@@ -51,7 +97,8 @@ def app():
             For inquiries, please reach out to us at:<br>
             <strong>Professor Kim Tae-Kyung</strong><br>
             Email: <a href="mailto:misoh049@gmail.com">misoh049@gmail.com</a><br>
-            Tel: (Add phone number here)
+            Tel: (+82) 010-3090-7916<br>
+            Address: Chungbuk National University, South Korea
         </p>
     """
     st.write(contact_info, unsafe_allow_html=True)

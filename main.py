@@ -1,12 +1,15 @@
 import streamlit as st
+from PIL import Image
 
 from streamlit_option_menu import option_menu
 import home, helmet, invasion, abandonment, fall, fight, heirachy, reverse_driving, traffic_accident
 
+icon = Image.open("assets/icon.png")
 st.set_page_config(
-    page_title="Computer Vision Project Portfolio",
-    page_icon="👩🏻‍💻",
+    page_title="AI Convergence Lab",
+    page_icon=icon,
     initial_sidebar_state="expanded",
+    # layout="wide"
 )
 
 class MultiApp:
@@ -22,7 +25,17 @@ class MultiApp:
         })
 
     def run():
-        # app = st.sidebar(
+        st.markdown(
+            """
+            <style>
+            .nav-link:hover {
+                color: #00ADB5 !important;  /* Change hover text color */
+                background-color: #393E46 !important;  /* Change hover background color */
+            }
+            </style>
+            """, unsafe_allow_html=True
+        )
+        
         with st.sidebar:        
             app = option_menu(
                 'Project Lists', ['Home','Helmet Detection','Property Invasion', 'Object Abandonemnt', 'Falling Detection', 
@@ -31,9 +44,10 @@ class MultiApp:
                 menu_icon="app-indicator",
                 default_index=0,
                 styles={
-                    "icon": {"color": "orange"},
-                    "nav-link": {"color":"#3C3D37","font-size": "1rem", "text-align": "left", "margin":"0px", "--hover-color": "#FCFAEE"},
-                    "nav-link-selected": {"color":"white", "background-color": "#507687"},}
+                    "menu-title": {"font-family": '"ui-sans-serif", "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI"', "color": "#787878", "padding": "1rem", "text-align": "center", "font-weight": "bold"},
+                    "icon": {"color": "#3FC1C9"},
+                    "nav-link": {"color":"#252A34","font-size": "1rem", "text-align": "left", "margin":"0px", "--hover-color": "#F5F5F5", "padding": "0.7rem 1rem", "font-family": '"ui-sans-serif", "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI"',},
+                    "nav-link-selected": {"color":"white", "background-color": "#364F6B"},}
                 )
 
         if app == "Home":
