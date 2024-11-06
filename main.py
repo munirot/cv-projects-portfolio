@@ -2,7 +2,8 @@ import streamlit as st
 from PIL import Image
 
 from streamlit_option_menu import option_menu
-import home, helmet, invasion, abandonment, fall, fight, heirachy, reverse_driving, traffic_accident
+import home
+from projects import (a_helmet,b_invasion,c_abandonment,d_fall,e_fight,f_heirachy,g_reverse_driving,h_traffic_accident,i_flood_detect)
 
 icon = Image.open("assets/icon.png")
 st.set_page_config(
@@ -29,8 +30,8 @@ class MultiApp:
             """
             <style>
             .nav-link:hover {
-                color: #00ADB5 !important;  /* Change hover text color */
-                background-color: #393E46 !important;  /* Change hover background color */
+                color: #00ADB5 !important; 
+                background-color: #393E46 !important;
             }
             </style>
             """, unsafe_allow_html=True
@@ -39,7 +40,7 @@ class MultiApp:
         with st.sidebar:        
             app = option_menu(
                 'Project Lists', ['Home','Helmet Detection','Property Invasion', 'Object Abandonemnt', 'Falling Detection', 
-                         'Fighting Detection', 'Object Heirachy', 'Reverse Driving', 'Traffic Accident'],
+                         'Fighting Detection', 'Object Heirachy', 'Reverse Driving', 'Traffic Accident', 'Flood Detection'],
                 icons=['house-fill'],
                 menu_icon="app-indicator",
                 default_index=0,
@@ -53,21 +54,23 @@ class MultiApp:
         if app == "Home":
             home.app()
         if app == "Helmet Detection":
-            helmet.app()    
+            a_helmet.app()    
         if app == "Property Invasion":
-            invasion.app()
+            b_invasion.app()
         if app == "Object Abandonemnt":
-            abandonment.app()
+            c_abandonment.app()
         if app == "Falling Detection":
-            fall.app()
+            d_fall.app()
         if app == "Fighting Detection":
-            fight.app()
+            e_fight.app()
         if app == "Object Heirachy":
-            heirachy.app()
+            f_heirachy.app()
         if app == "Reverse Driving":
-            reverse_driving.app()
+            g_reverse_driving.app()
         if app == "Traffic Accident":
-            traffic_accident.app()
+            h_traffic_accident.app()
+        if app == "Flood Detection":
+            i_flood_detect.app()
              
     run()            
          
