@@ -3,7 +3,7 @@ from PIL import Image
 
 from streamlit_option_menu import option_menu
 import home
-from projects import (a_helmet,b_invasion,c_abandonment,d_fall,e_fight,f_heirachy,g_reverse_driving,h_traffic_accident,i_flood_detect)
+from projects import (a_helmet,b_invasion,b_wandering,c_abandonment,d_fall,e_fight,f_hierarchy,g_reverse_driving,h_traffic_accident,i_flood_detect)
 
 icon = Image.open("assets/icon.png")
 st.set_page_config(
@@ -39,8 +39,8 @@ class MultiApp:
         
         with st.sidebar:        
             app = option_menu(
-                'Project Lists', ['Home','Helmet Detection','Property Invasion', 'Object Abandonemnt', 'Falling Detection', 
-                         'Fighting Detection', 'Object Heirachy', 'Reverse Driving', 'Traffic Accident', 'Flood Detection'],
+                'Project Lists', ['Home','Helmet Detection','Property Invasion','Wandering Detection','Object Abandonment', 'Falling Detection', 
+                         'Fighting Detection', 'Object Hierarchy', 'Reverse Driving', 'Traffic Accident', 'Flood Detection'],
                 icons=['house-fill'],
                 menu_icon="app-indicator",
                 default_index=0,
@@ -57,14 +57,16 @@ class MultiApp:
             a_helmet.app()    
         if app == "Property Invasion":
             b_invasion.app()
-        if app == "Object Abandonemnt":
+        if app == "Wandering Detection":
+            b_wandering.app()
+        if app == "Object Abandonment":
             c_abandonment.app()
         if app == "Falling Detection":
             d_fall.app()
         if app == "Fighting Detection":
             e_fight.app()
-        if app == "Object Heirachy":
-            f_heirachy.app()
+        if app == "Object Hierarchy":
+            f_hierarchy.app()
         if app == "Reverse Driving":
             g_reverse_driving.app()
         if app == "Traffic Accident":

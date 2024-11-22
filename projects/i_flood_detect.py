@@ -47,4 +47,4 @@ def app():
     st.image("assets/methods/9_flood_detection.png", caption="Methodology Flowchart")
 
     st.header("Demo")
-    st.video("https://youtu.be/h08FiHM5X4k?si=Oi8OBmuuzkReTJA4")
+    st.video("https://youtu.be/COF3yltUL0I")
