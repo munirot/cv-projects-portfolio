@@ -3,7 +3,8 @@ from PIL import Image
 
 from streamlit_option_menu import option_menu
 import home
-from projects import (a_helmet,b_invasion,b_wandering,c_abandonment,d_fall,e_fight,f_hierarchy,g_reverse_driving,h_traffic_accident,i_flood_detect)
+from projects import (a_helmet,b_invasion,c_wandering, d_abandonment,e_fall,f_fight,g_hierarchy,h_reverse_driving,
+                      i_traffic_accident, j_flood_detect,k_color_analysis,l_gait_detection)
 
 icon = Image.open("assets/icon.png")
 st.set_page_config(
@@ -40,7 +41,8 @@ class MultiApp:
         with st.sidebar:        
             app = option_menu(
                 'Project Lists', ['Home','Helmet Detection','Property Invasion','Wandering Detection','Object Abandonment', 'Falling Detection', 
-                         'Fighting Detection', 'Object Hierarchy', 'Reverse Driving', 'Traffic Accident', 'Flood Detection'],
+                         'Fighting Detection', 'Object Hierarchy', 'Reverse Driving', 'Traffic Accident', 'Flood Detection', 'Color Analysis',
+                         "Gait Analysis"],
                 icons=['house-fill'],
                 menu_icon="app-indicator",
                 default_index=0,
@@ -58,21 +60,25 @@ class MultiApp:
         if app == "Property Invasion":
             b_invasion.app()
         if app == "Wandering Detection":
-            b_wandering.app()
+            c_wandering.app()
         if app == "Object Abandonment":
-            c_abandonment.app()
+            d_abandonment.app()
         if app == "Falling Detection":
-            d_fall.app()
+            e_fall.app()
         if app == "Fighting Detection":
-            e_fight.app()
+            f_fight.app()
         if app == "Object Hierarchy":
-            f_hierarchy.app()
+            g_hierarchy.app()
         if app == "Reverse Driving":
-            g_reverse_driving.app()
+            h_reverse_driving.app()
         if app == "Traffic Accident":
-            h_traffic_accident.app()
+            i_traffic_accident.app()
         if app == "Flood Detection":
-            i_flood_detect.app()
+            j_flood_detect.app()
+        if app == "Color Analysis":
+            k_color_analysis.app()
+        if app == "Gait Analysis":
+            l_gait_detection.app()
              
     run()            
          
